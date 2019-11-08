@@ -15,6 +15,7 @@
 
         steps 
              {
+	       checkout scm
                sudo sh ' terraform init '
                sudo sh ' terraform plan '
                sudo sh ' terraform apply -input = yes '
