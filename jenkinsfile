@@ -1,0 +1,27 @@
+ pipeline {
+   agent any
+   tools
+  {  
+    jdk 'JAVA_HOME'
+    maven 'MAVEN_HOME'
+       }
+      stages
+	{
+         stage('checkoutstage')
+	{
+	steps
+	{
+	  checkout scm
+        }
+     }
+       stage ('terraform init & plan & apply')
+       {
+
+        steps 
+             {
+               sh ' terraform init '
+               sh ' terraform plan '
+               sh ' terraform apply -input = yes '
+       }
+      }
+    }
