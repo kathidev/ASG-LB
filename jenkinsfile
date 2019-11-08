@@ -12,6 +12,10 @@
      }
        stage ('terraform init & plan & apply')
        {
+       
+        options {
+        timeout(time: 1, unit: 'HOURS') 
+      }
 
         steps 
              {
