@@ -17,8 +17,8 @@
              {
 	      
                sh ' terraform init ' 
-	       sh ' terraform plan -out plan.out'
-               sh ' terraform apply -auto-approve plan.out '
+	       sh ' terraform plan '
+               sh ' terraform apply -auto-approve '
        }
       }
     }
