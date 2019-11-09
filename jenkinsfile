@@ -20,9 +20,9 @@
         steps 
              {
 	       checkout scm
-               sh ' terraform init /var/lib/jenkins/workspace/terraform asg-lb '
-               sh ' terraform plan /var/lib/jenkins/workspace/terraform asg-lb '
-               sh ' terraform apply -input = yes /var/lib/jenkins/workspace/terraform asg-lb '
+               sh ' terraform init ' 
+	       sh ' terraform plan -out plan.out'
+               sh ' terraform apply -auto-approve plan.out '
        }
       }
     }
